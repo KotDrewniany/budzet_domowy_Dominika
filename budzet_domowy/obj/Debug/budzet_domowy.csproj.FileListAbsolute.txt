@@ -1,0 +1,57 @@
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.csprojAssemblyReference.cache
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.FormualrzGlowny.resources
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.Properties.Resources.resources
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.csproj.GenerateResource.cache
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.exe
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.pdb
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\bin\Debug\budzet_domowy.exe.config
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\bin\Debug\budzet_domowy.exe
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\bin\Debug\budzet_domowy.pdb
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.FormularzDodaj.resources
+C:\Users\mkkar\Desktop\budzet_domowy_github-master\budzet_domowy\obj\Debug\budzet_domowy.FormularzUzytkownik.resources
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csprojResolveAssemblyReference.cache
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormualrzGlowny.resources
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormularzDodaj.resources
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormularzUzytkownik.resources
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.Properties.Resources.resources
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csproj.GenerateResource.cache
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.pdb
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.exe.config
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.pdb
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\bin\Debug\baza_danych.mdf
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\bin\Debug\baza_danych_log.ldf
+C:\Users\Konrad Rulak\Downloads\budzet_domowy_19-20190323T233355Z-001\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.uc_dodaj_kategorię.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\bin\Debug\baza_danych.mdf
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\bin\Debug\baza_danych_log.ldf
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.exe.config
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\bin\Debug\budzet_domowy.pdb
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csprojResolveAssemblyReference.cache
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormualrzGlowny.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormularzDodaj.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.FormularzUzytkownik.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.Properties.Resources.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.uc_dodaj_kategorię.resources
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csproj.GenerateResource.cache
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\OneDrive\projekt\budzet_domowy_19\budzet_domowy\obj\Debug\budzet_domowy.pdb
+C:\Users\mkkar\Downloads\budzet_domowy\bin\Debug\baza_danych.mdf
+C:\Users\mkkar\Downloads\budzet_domowy\bin\Debug\baza_danych_log.ldf
+C:\Users\mkkar\Downloads\budzet_domowy\bin\Debug\budzet_domowy.exe.config
+C:\Users\mkkar\Downloads\budzet_domowy\bin\Debug\budzet_domowy.exe
+C:\Users\mkkar\Downloads\budzet_domowy\bin\Debug\budzet_domowy.pdb
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.csprojAssemblyReference.cache
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.FormualrzGlowny.resources
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.FormularzDodaj.resources
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.FormularzUzytkownik.resources
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.Properties.Resources.resources
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.uc_dodaj_kategorię.resources
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.csproj.GenerateResource.cache
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.exe
+C:\Users\mkkar\Downloads\budzet_domowy\obj\Debug\budzet_domowy.pdb
