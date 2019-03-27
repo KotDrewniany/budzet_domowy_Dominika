@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using budzet_domowy.Enum;
 
 namespace budzet_domowy
 {
-    public partial class FormualrzGlowny : Form
+	public partial class FormualrzGlowny : Form
     {
         public FormualrzGlowny()
         {
             InitializeComponent();
-
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -43,22 +38,10 @@ namespace budzet_domowy
             dodaj.ShowDialog();
         }
 
-
-        //public FormualrzGlowny()
-        //{
-        //    InitializeComponent();
-        //}
-
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    db.uzytkownicy.InsertOnSubmit(new uzytkownicy()
-        //    {
-        //        imie = IMIE.Text,
-        //        nazwisko = "Karys",
-        //    });
-        //    db.SubmitChanges();
-
-        //    Convert.ToDouble(kwota.Text);
-        //}
-    }
+		private void FormualrzGlowny_Load(object sender, EventArgs e)
+		{
+			// TODO: This line of code loads data into the 'baza_danychDataSet.operacje' table. You can move, or remove it, as needed.
+			this.operacjeTableAdapter.Fill(this.baza_danychDataSet.operacje);
+		}
+	}
 }

@@ -47,7 +47,7 @@ namespace budzet_domowy
                 btn.Text = "Zmień";
             }
             this.other = other;
-            other.otwarty_uc_dodaj_kategorie = 1;
+            other.OtwartyUcDodajKategorie = 1;
         }
         public uc_dodaj_kategorię(FormularzDodaj other, int p, string t)
         {
@@ -64,12 +64,12 @@ namespace budzet_domowy
                 txt_tekst.Text = t;
             }
             this.other = other;
-            other.otwarty_uc_dodaj_kategorie = 1;
+            other.OtwartyUcDodajKategorie = 1;
         }
 
         private void btn_anuluj_Click(object sender, EventArgs e)
         {
-            other.otwarty_uc_dodaj_kategorie = 0;
+            other.OtwartyUcDodajKategorie = 0;
             this.Parent.Controls.Remove(this);
         }
 
@@ -125,7 +125,7 @@ namespace budzet_domowy
                 db.SubmitChanges();
             }
             other.wczytaj_kategorie();
-            other.otwarty_uc_dodaj_kategorie = 0;
+            other.OtwartyUcDodajKategorie = 0;
             this.Parent.Controls.Remove(this);
         }
     }
