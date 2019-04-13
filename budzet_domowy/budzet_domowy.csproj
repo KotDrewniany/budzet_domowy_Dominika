@@ -192,10 +192,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="baza_danych.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="baza_danych_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>baza_danych.mdf</DependentUpon>
     </Content>
   </ItemGroup>

@@ -85,3 +85,18 @@ E:\budzet_domowy_KonradRulak\budzet_domowy\obj\Debug\budzet_domowy.csproj.Genera
 E:\budzet_domowy_KonradRulak\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
 E:\budzet_domowy_KonradRulak\budzet_domowy\obj\Debug\budzet_domowy.exe
 E:\budzet_domowy_KonradRulak\budzet_domowy\obj\Debug\budzet_domowy.pdb
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\bin\Debug\baza_danych.mdf
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\bin\Debug\baza_danych_log.ldf
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\bin\Debug\budzet_domowy.exe.config
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\bin\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\bin\Debug\budzet_domowy.pdb
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.csprojResolveAssemblyReference.cache
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.FormualrzGlowny.resources
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.FormularzDodaj.resources
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.FormularzUzytkownik.resources
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.Properties.Resources.resources
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.uc_dodaj_kategorię.resources
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.csproj.GenerateResource.cache
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.csproj.CoreCompileInputs.cache
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.exe
+C:\Users\Konrad Rulak\Source\Repos\budzet_domowy_Dominika\budzet_domowy\obj\Debug\budzet_domowy.pdb
