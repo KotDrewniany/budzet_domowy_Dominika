@@ -1,33 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using budzet_domowy.Model;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using budzet_domowy.Model;
+using static System.Decimal;
 
 namespace budzet_domowy
 {
 	public partial class FormularzDodaj : Form
 	{
+		public FormualrzGlowny MainForm { get; set; }
 		public int OtwartyUcDodajKategorie { get; set; }
+		public int EditedId { get; set; }
+		public bool IsEditMode => EditedId != 0;
+		public OperationDto OperationDto { get; set; }
 
-		FormualrzGlowny other;
-		public FormularzDodaj()
+		public FormularzDodaj(FormualrzGlowny mainForm)
 		{
 			InitializeComponent();
 			InitializeComboBoxes();
 			radioButtonExpense.Checked = true;
+			MainForm = mainForm;
 		}
 
-
-
-		public FormularzDodaj(FormualrzGlowny other)
+		public void SetEditedItem(int editedId)
 		{
-			InitializeComponent();
-			this.other = other;
-			InitializeComboBoxes();
-			radioButtonExpense.Checked = true;
+			EditedId = editedId;
+			if (IsEditMode)
+				ReadEditedOperation();
+			else
+				ResetForm();
+		}
+
+		private void ReadEditedOperation()
+		{
+			using (var context = new DataClasses1DataContext())
+			{
+				var operation = context.operacje.FirstOrDefault(x => x.id_operacji == EditedId);
+				if (operation == null)
+					throw new ArgumentException("No operation with given id in the database");
+
+				OperationDto = new OperationDto()
+				{
+					Id = operation.id_operacji,
+					Data = operation.data,
+					Price = operation.kwota,
+					CategoryId = operation.id_kategoria,
+					UserId = operation.id_uzytkownika,
+					PaymentFormId = operation.id_forma_platnosci,
+					Description = operation.opis,
+				};
+			}
+			SetEditedOperationData();
+		}
+
+		private void SetEditedOperationData()
+		{
+			//comboBoxUsers.SelectedIndex = OperationDto.UserId;
+			//comboBoxCategory.SelectedIndex = OperationDto.CategoryId;
+			//comboBoxSubcategory.SelectedValue = ;
+			dateTimePickerDate.Value = OperationDto.Data;
+			//radioButtonExpense.Checked = ;
+			//comboBoxOperationForm.Text = ;
+			textBoxPrice.Text = OperationDto.Price.ToString("0.00");
+			richTextBoxDescription.Text = OperationDto.Description;
 		}
 
 		private void InitializeComboBoxes()
@@ -39,7 +76,7 @@ namespace budzet_domowy
 				var categories = context.kategoria.Where(x => x.id_nadkategoria == null).Select(x => new ComboboxModel
 				{ DisplayMember = x.nazwa, Id = x.id_kategoria }).ToArray();
 				var operationForms = context.forma_platnosci.Select(x => new ComboboxModel
-					{ DisplayMember = x.nazwa, Id = x.id_forma_platnosci }).ToArray();
+				{ DisplayMember = x.nazwa, Id = x.id_forma_platnosci }).ToArray();
 
 				comboBoxUsers.Items.AddRange(users);
 				comboBoxCategory.Items.AddRange(categories);
@@ -283,29 +320,56 @@ namespace budzet_domowy
 			using (var context = new DataClasses1DataContext())
 			{
 				var userId = comboBoxUsers.SelectedIndex != -1
-					? ((ComboboxModel) comboBoxUsers.Items[comboBoxUsers.SelectedIndex]).Id
+					? ((ComboboxModel)comboBoxUsers.Items[comboBoxUsers.SelectedIndex]).Id
 					: 0;
 				var categoryId = comboBoxCategory.SelectedIndex != -1
-					? ((ComboboxModel) comboBoxCategory.Items[comboBoxCategory.SelectedIndex]).Id
+					? ((ComboboxModel)comboBoxCategory.Items[comboBoxCategory.SelectedIndex]).Id
+					: 0;
+				var subcategoryId = comboBoxSubcategory.SelectedIndex != -1
+					? ((ComboboxModel)comboBoxSubcategory.Items[comboBoxSubcategory.SelectedIndex]).Id
 					: 0;
 				var operationFormId = comboBoxOperationForm.SelectedIndex != -1
-					? ((ComboboxModel) comboBoxOperationForm.Items[comboBoxOperationForm.SelectedIndex]).Id
+					? ((ComboboxModel)comboBoxOperationForm.Items[comboBoxOperationForm.SelectedIndex]).Id
 					: 0;
-				context.operacje.InsertOnSubmit(new operacje()
+
+				if (IsEditMode)
 				{
-					data = dateTimePickerDate.Value,
-					kwota = Decimal.TryParse(textBoxPrice.Text, out var price) ? price : 0,
-					id_uzytkownika = userId,
-					id_kategoria = categoryId,
-					//id_forma_platnosci = operationFormId,
-					opis = richTextBoxDescription.Text
-				});
+					var operation = context.operacje.FirstOrDefault(x => x.id_operacji == OperationDto.Id);
+					if (operation != null)
+					{
+						operation.data = dateTimePickerDate.Value;
+						operation.kwota = TryParse(textBoxPrice.Text, out var price) ? price : 0;
+						operation.id_uzytkownika = userId;
+						operation.id_kategoria = categoryId;
+						//id_forma_platnosci = operationFormId,
+						operation.opis = richTextBoxDescription.Text;
+					}
+				}
+				else
+				{
+					context.operacje.InsertOnSubmit(new operacje()
+					{
+						data = dateTimePickerDate.Value,
+						kwota = TryParse(textBoxPrice.Text, out var price) ? price : 0,
+						id_uzytkownika = userId,
+						id_kategoria = categoryId,
+						//id_forma_platnosci = operationFormId,
+						opis = richTextBoxDescription.Text
+					});
+				}
+				
 				context.SubmitChanges();
 			}
+			MainForm.UpdateOperationList();
 			Close();
 		}
 
 		private void buttonReset_Click(object sender, EventArgs e)
+		{
+			ResetForm();
+		}
+
+		public void ResetForm()
 		{
 			comboBoxUsers.SelectedIndex = -1;
 			comboBoxCategory.SelectedIndex = -1;
