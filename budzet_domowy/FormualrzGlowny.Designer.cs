@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormualrzGlowny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.menuGłówne = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ZamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,9 +65,22 @@
             this.operacjeTableAdapter = new budzet_domowy.baza_danychDataSetTableAdapters.operacjeTableAdapter();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tW_daty = new System.Windows.Forms.TreeView();
-            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.tW_kategorie = new System.Windows.Forms.TreeView();
+            this.MenuKateogrii = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmieńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.LV_operacje = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataGridViewOperations = new System.Windows.Forms.DataGridView();
             this.idoperacjiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,20 +91,12 @@
             this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.LV_operacje = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuGłówne.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.operacjeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baza_danychDataSet)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.MenuKateogrii.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -339,6 +344,7 @@
             this.toolStripLabel7.Name = "toolStripLabel7";
             this.toolStripLabel7.Size = new System.Drawing.Size(41, 24);
             this.toolStripLabel7.Text = "Widok";
+            this.toolStripLabel7.Click += new System.EventHandler(this.toolStripLabel7_Click);
             // 
             // operacjeBindingSource
             // 
@@ -360,38 +366,73 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tW_daty, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.treeView2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tW_kategorie, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.2158F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.7842F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(313, 523);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.86042F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.13958F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(259, 523);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tW_daty
             // 
+            this.tW_daty.CheckBoxes = true;
             this.tW_daty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tW_daty.HideSelection = false;
             this.tW_daty.Location = new System.Drawing.Point(3, 3);
             this.tW_daty.Name = "tW_daty";
-            this.tW_daty.Size = new System.Drawing.Size(307, 267);
+            this.tW_daty.Size = new System.Drawing.Size(253, 259);
             this.tW_daty.TabIndex = 0;
-            this.tW_daty.DoubleClick += new System.EventHandler(this.tW_daty_DoubleClick);
+            this.tW_daty.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tW_daty_AfterCheck);
             // 
-            // treeView2
+            // tW_kategorie
             // 
-            this.treeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView2.Location = new System.Drawing.Point(3, 276);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(307, 244);
-            this.treeView2.TabIndex = 1;
+            this.tW_kategorie.CheckBoxes = true;
+            this.tW_kategorie.ContextMenuStrip = this.MenuKateogrii;
+            this.tW_kategorie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tW_kategorie.HideSelection = false;
+            this.tW_kategorie.Location = new System.Drawing.Point(3, 268);
+            this.tW_kategorie.Name = "tW_kategorie";
+            this.tW_kategorie.Size = new System.Drawing.Size(253, 252);
+            this.tW_kategorie.TabIndex = 1;
+            this.tW_kategorie.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tW_kategorie_AfterCheck);
+            // 
+            // MenuKateogrii
+            // 
+            this.MenuKateogrii.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem,
+            this.zmieńToolStripMenuItem,
+            this.usuńToolStripMenuItem});
+            this.MenuKateogrii.Name = "contextMenuStrip1";
+            this.MenuKateogrii.Size = new System.Drawing.Size(109, 70);
+            // 
+            // dodajToolStripMenuItem
+            // 
+            this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.dodajToolStripMenuItem.Text = "Dodaj";
+            this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
+            // 
+            // zmieńToolStripMenuItem
+            // 
+            this.zmieńToolStripMenuItem.Name = "zmieńToolStripMenuItem";
+            this.zmieńToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.zmieńToolStripMenuItem.Text = "Zmień";
+            this.zmieńToolStripMenuItem.Click += new System.EventHandler(this.zmieńToolStripMenuItem_Click);
+            // 
+            // usuńToolStripMenuItem
+            // 
+            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.usuńToolStripMenuItem.Text = "Usuń";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.65683F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.34317F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.76771F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.23229F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -406,7 +447,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(322, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(268, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -421,9 +462,73 @@
             this.splitContainer1.Panel2.Controls.Add(this.chart1);
             this.splitContainer1.Panel2.Controls.Add(this.splitter1);
             this.splitContainer1.Panel2MinSize = 100;
-            this.splitContainer1.Size = new System.Drawing.Size(1087, 523);
+            this.splitContainer1.Size = new System.Drawing.Size(1141, 523);
             this.splitContainer1.SplitterDistance = 413;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // LV_operacje
+            // 
+            this.LV_operacje.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader7,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader8,
+            this.columnHeader6});
+            this.LV_operacje.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LV_operacje.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LV_operacje.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LV_operacje.FullRowSelect = true;
+            this.LV_operacje.GridLines = true;
+            this.LV_operacje.HideSelection = false;
+            this.LV_operacje.Location = new System.Drawing.Point(0, 0);
+            this.LV_operacje.Name = "LV_operacje";
+            this.LV_operacje.Size = new System.Drawing.Size(1141, 413);
+            this.LV_operacje.TabIndex = 4;
+            this.LV_operacje.UseCompatibleStateImageBehavior = false;
+            this.LV_operacje.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Data";
+            this.columnHeader1.Width = 116;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Kwota";
+            this.columnHeader7.Width = 77;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Użytkownik";
+            this.columnHeader2.Width = 164;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Typ ";
+            this.columnHeader3.Width = 92;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Kategoria";
+            this.columnHeader4.Width = 110;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Podkategoria";
+            this.columnHeader5.Width = 139;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Forma platności";
+            this.columnHeader8.Width = 135;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Opis";
+            this.columnHeader6.Width = 210;
             // 
             // dataGridViewOperations
             // 
@@ -489,14 +594,14 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(3, 0);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(1084, 106);
+            this.chart1.Size = new System.Drawing.Size(1138, 106);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -507,70 +612,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 106);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
-            // 
-            // LV_operacje
-            // 
-            this.LV_operacje.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader7,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader8,
-            this.columnHeader6});
-            this.LV_operacje.Cursor = System.Windows.Forms.Cursors.Default;
-            this.LV_operacje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LV_operacje.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.LV_operacje.FullRowSelect = true;
-            this.LV_operacje.GridLines = true;
-            this.LV_operacje.HideSelection = false;
-            this.LV_operacje.Location = new System.Drawing.Point(0, 0);
-            this.LV_operacje.Name = "LV_operacje";
-            this.LV_operacje.Size = new System.Drawing.Size(1087, 413);
-            this.LV_operacje.TabIndex = 4;
-            this.LV_operacje.UseCompatibleStateImageBehavior = false;
-            this.LV_operacje.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Data";
-            this.columnHeader1.Width = 116;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Kwota";
-            this.columnHeader7.Width = 77;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Użytkownik";
-            this.columnHeader2.Width = 164;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Typ ";
-            this.columnHeader3.Width = 92;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Kategoria";
-            this.columnHeader4.Width = 110;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Podkategoria";
-            this.columnHeader5.Width = 139;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Forma platności";
-            this.columnHeader8.Width = 135;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Opis";
-            this.columnHeader6.Width = 210;
             // 
             // FormualrzGlowny
             // 
@@ -592,6 +633,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.operacjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baza_danychDataSet)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.MenuKateogrii.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -638,7 +680,7 @@
 		private baza_danychDataSetTableAdapters.operacjeTableAdapter operacjeTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TreeView tW_daty;
-        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView tW_kategorie;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridViewOperations;
@@ -660,6 +702,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ContextMenuStrip MenuKateogrii;
+        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmieńToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
     }
 }
 

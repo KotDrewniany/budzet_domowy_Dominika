@@ -14,7 +14,7 @@ namespace budzet_domowy
     public partial class uc_dodaj_kategorię : UserControl
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
-        private FormularzDodaj other;
+        private FormualrzGlowny other;
         private int rodzaj, id_nadkat;
         private string tekst;
         public string Tekst
@@ -32,7 +32,7 @@ namespace budzet_domowy
         {
             InitializeComponent();
         }
-        public uc_dodaj_kategorię(FormularzDodaj other, int p, int id, string t)
+        public uc_dodaj_kategorię(FormualrzGlowny other, int p, int id, string t)
         {
             InitializeComponent();
             rodzaj = p;
@@ -49,7 +49,7 @@ namespace budzet_domowy
             this.other = other;
             other.OtwartyUcDodajKategorie = 1;
         }
-        public uc_dodaj_kategorię(FormularzDodaj other, int p, string t)
+        public uc_dodaj_kategorię(FormualrzGlowny other, int p, string t)
         {
             InitializeComponent();
             rodzaj = p;

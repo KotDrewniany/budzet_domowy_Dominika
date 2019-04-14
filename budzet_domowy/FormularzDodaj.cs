@@ -139,6 +139,7 @@ namespace budzet_domowy
 
 		private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+            /*
 			var text = string.Empty;
 			if (treeView1.SelectedNode != null)
 			{
@@ -179,6 +180,7 @@ namespace budzet_domowy
 				this.Controls.Add(uDK);
 				uDK.BringToFront();
 			}
+            */
 		}
 
 		private void btn_dodaj_kategorie_Click(object sender, EventArgs e)
@@ -230,6 +232,7 @@ namespace budzet_domowy
 
 		private void zmieńToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+            /*
 			if (OtwartyUcDodajKategorie == 0)
 			{
 				if (treeView1.SelectedNode != null && treeView1.SelectedNode.Level > 0)
@@ -244,10 +247,12 @@ namespace budzet_domowy
 					uDK.Tekst = treeView1.SelectedNode.Text;
 				}
 			}
+            */
 		}
 
 		private void dodajToolStripMenuItem_Click_1(object sender, EventArgs e)
 		{
+            /*
 			if (OtwartyUcDodajKategorie == 0)
 			{
 				int? id;
@@ -290,6 +295,7 @@ namespace budzet_domowy
 					uDK.BringToFront();
 				}
 			}
+            */
 		}
 
 		private void comboBoxCategory_SelectedIndexChanged(object sender, EventArgs e)
