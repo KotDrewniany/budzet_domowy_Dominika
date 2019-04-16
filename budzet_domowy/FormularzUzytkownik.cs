@@ -23,12 +23,15 @@ namespace budzet_domowy
 
         private void wczytaj()
         {
-            lb_uzytkownicy.Items.Clear();
-            var query = db.uzytkownicy;
-            foreach(var u in query)
-            {
-                lb_uzytkownicy.Items.Add(u.imie +" "+ u.nazwisko);
-            }
+            var query = from u in db.uzytkownicy
+                        select new
+                        {
+                            uzytkownik = u.imie + " " + u.nazwisko,
+                            id = u.id_uzytkownika
+                        };
+            lb_uzytkownicy.DisplayMember = "uzytkownik";
+            lb_uzytkownicy.ValueMember = "id";
+            lb_uzytkownicy.DataSource = query;
         }
         private void label11_Click(object sender, EventArgs e)
         {
@@ -37,7 +40,7 @@ namespace budzet_domowy
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var query = db.uzytkownicy.Where(t => t.imie == zm_imie && t.nazwisko == zm_nazwisko);
+            var query = db.uzytkownicy.Where(t => t.id_uzytkownika.ToString() == lb_uzytkownicy.SelectedValue.ToString());
             foreach (uzytkownicy u in query)
             {
                 u.imie = w_imie;
@@ -63,10 +66,10 @@ namespace budzet_domowy
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var query = db.uzytkownicy.Where(t => t.imie == w_imie && t.nazwisko == w_nazwisko );
-            if (w_nazwisko != "" && w_imie != "" && query.FirstOrDefault() == null)
+            var query = db.uzytkownicy.Where(t => t.id_uzytkownika.ToString() == lb_uzytkownicy.SelectedValue.ToString());
+            if (w_nazwisko != "" && w_imie != "" && query.FirstOrDefault().imie != txt_imie.Text && query.FirstOrDefault().nazwisko != txt_nazwisko.Text)
             {
-                    uzytkownicy nowy = new uzytkownicy
+                uzytkownicy nowy = new uzytkownicy
                     {
                         imie = w_imie,
                         nazwisko = w_nazwisko
@@ -94,12 +97,7 @@ namespace budzet_domowy
         {
             if (lb_uzytkownicy.SelectedItem != null)
             {
-                string tekst = lb_uzytkownicy.SelectedItem.ToString();
-                int pozycja_spacji = tekst.IndexOf(" ");
-                tekst = tekst.Substring(0, pozycja_spacji);
-                var query = from u in db.uzytkownicy
-                            where u.imie == tekst
-                            select u;
+                var query = db.uzytkownicy.Where(t => t.id_uzytkownika.ToString() == lb_uzytkownicy.SelectedValue.ToString());
                 zm_imie = query.FirstOrDefault().imie;
                 zm_nazwisko = query.FirstOrDefault().nazwisko;
                 txt_imie.Text = zm_imie;
@@ -109,7 +107,7 @@ namespace budzet_domowy
 
         private void btn_usun_Click(object sender, EventArgs e)
         {
-            var query = db.uzytkownicy.Where(t => t.imie == w_imie && t.nazwisko == w_nazwisko);
+            var query = db.uzytkownicy.Where(t => t.id_uzytkownika.ToString() == lb_uzytkownicy.SelectedValue.ToString());
             foreach (var u in query)
             {
                 db.uzytkownicy.DeleteOnSubmit(u);
@@ -131,12 +129,7 @@ namespace budzet_domowy
         {
             if(lb_uzytkownicy.SelectedItem != null)
             {
-                string tekst = lb_uzytkownicy.SelectedItem.ToString();
-                int pozycja_spacji = tekst.IndexOf(" ");
-                tekst = tekst.Substring(0, pozycja_spacji);
-                var query = from u in db.uzytkownicy
-                            where u.imie == tekst
-                            select u;
+                var query = db.uzytkownicy.Where(t => t.id_uzytkownika.ToString() == lb_uzytkownicy.SelectedValue.ToString());
                 foreach (var u in query)
                 {
                     db.uzytkownicy.DeleteOnSubmit(u);

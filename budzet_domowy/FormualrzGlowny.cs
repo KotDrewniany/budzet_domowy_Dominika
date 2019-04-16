@@ -58,11 +58,12 @@ namespace budzet_domowy
         private void FormualrzGlowny_Load(object sender, EventArgs e)
         {
             UpdateOperationList();
-            wczytajeDane();
+            wczytaj_uzytkownikow();
             wyswietlDaty();
             wczytaj_kategorie();
             ustaw_wszystko_na_checked(tW_daty.Nodes);
             ustaw_wszystko_na_checked(tW_kategorie.Nodes);
+            wczytajeDane();
         }
 
         public void UpdateOperationList()
@@ -152,6 +153,25 @@ namespace budzet_domowy
                 nowy_rekord.SubItems.Add(row.opis);
             }
         }
+        void wczytaj_uzytkownikow()
+        {
+            
+                var query = from u in db.uzytkownicy
+                            select new
+                            {
+                                uzytkownik = u.imie + " " + u.nazwisko,
+                                id = u.id_uzytkownika
+                            };
+            clb_uzytkownicy.DataSource = query;
+            clb_uzytkownicy.DisplayMember = "uzytkownik";
+            clb_uzytkownicy.ValueMember = "id";
+            for (int i = 0; i < clb_uzytkownicy.Items.Count; i++)
+            {
+                clb_uzytkownicy.SetItemChecked(i, true);
+            }
+
+        }
+        /* useless
         void wczytaj_dane_filtruj(string rok = "%", string miesiac = "%", string dzien = "%")
         {
             LV_operacje.Items.Clear();
@@ -190,6 +210,7 @@ namespace budzet_domowy
             }
 
         }
+        */
         void wyswietlDaty()
         {
             tW_daty.Nodes.Add("(Wszystkie daty)", "(Wszystkie daty)");
@@ -343,12 +364,27 @@ namespace budzet_domowy
                 CheckAllChildNodes(wezel, true);
             }
         }
+        public void GetUsers(List<int> chk_uzytkownicy)
+        {
+            List<dynamic> list = new List<dynamic>
+            {
+                new { Item = 1, Description = "1: Item1"},
+                new { Item = 2, Description = "2: Item2"}
+            };
+            var checkedItems = clb_uzytkownicy.CheckedItems;
+            foreach (dynamic checkedItem in checkedItems)
+            {
+                chk_uzytkownicy.Add(checkedItem.id);
+            }
+        }
         void stworz_liste()
         {
             List<string> chk_kategorie = new List<string>();
             List<DateTime> chk_daty = new List<DateTime>();
+            List<int> chk_uzytkownicy = new List<int>();
             GetCheckedNodes(tW_kategorie.Nodes, chk_kategorie);
             GetDates(tW_daty.Nodes, chk_daty);
+            GetUsers(chk_uzytkownicy);
             LV_operacje.Items.Clear();
             var query = from o in db.operacje
                         join u in db.uzytkownicy on o.id_uzytkownika equals u.id_uzytkownika
@@ -357,6 +393,7 @@ namespace budzet_domowy
                         join k_nad in db.kategoria on k_pod.id_nadkategoria equals k_nad.id_kategoria
                         where (chk_kategorie.Contains(k_pod.nazwa) || chk_kategorie.Contains(k_nad.nazwa))
                         && chk_daty.Contains(o.data)
+                        && chk_uzytkownicy.Contains(o.id_uzytkownika)
                         select new
                         {
                             data = o.data,
@@ -424,12 +461,6 @@ namespace budzet_domowy
         }
         private void toolStripLabel7_Click(object sender, EventArgs e)
         {
-            List<DateTime> daty = new List<DateTime>();
-            GetDates(tW_daty.Nodes, daty);
-            foreach(var u in daty)
-            {
-                MessageBox.Show(u.ToShortDateString());
-            }
         }
 
         private void tW_kategorie_AfterCheck(object sender, TreeViewEventArgs e)
@@ -457,6 +488,11 @@ namespace budzet_domowy
                     this.CheckAllChildNodes(e.Node, e.Node.Checked);
                 }
             }
+            stworz_liste();
+        }
+
+        private void clb_uzytkownicy_SelectedIndexChanged(object sender, EventArgs e)
+        {
             stworz_liste();
         }
     }

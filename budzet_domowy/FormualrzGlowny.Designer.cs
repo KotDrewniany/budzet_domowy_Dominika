@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormualrzGlowny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.menuGłówne = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ZamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,12 +64,13 @@
             this.baza_danychDataSet = new budzet_domowy.baza_danychDataSet();
             this.operacjeTableAdapter = new budzet_domowy.baza_danychDataSetTableAdapters.operacjeTableAdapter();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tW_daty = new System.Windows.Forms.TreeView();
+            this.clb_uzytkownicy = new System.Windows.Forms.CheckedListBox();
             this.tW_kategorie = new System.Windows.Forms.TreeView();
             this.MenuKateogrii = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmieńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tW_daty = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.LV_operacje = new System.Windows.Forms.ListView();
@@ -363,29 +364,29 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.clb_uzytkownicy, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tW_kategorie, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.tW_daty, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tW_kategorie, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.86042F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.13958F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(259, 523);
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.34192F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.6123F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.93117F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(259, 699);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // tW_daty
+            // clb_uzytkownicy
             // 
-            this.tW_daty.CheckBoxes = true;
-            this.tW_daty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tW_daty.HideSelection = false;
-            this.tW_daty.Location = new System.Drawing.Point(3, 3);
-            this.tW_daty.Name = "tW_daty";
-            this.tW_daty.Size = new System.Drawing.Size(253, 259);
-            this.tW_daty.TabIndex = 0;
-            this.tW_daty.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tW_daty_AfterCheck);
+            this.clb_uzytkownicy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clb_uzytkownicy.FormattingEnabled = true;
+            this.clb_uzytkownicy.Location = new System.Drawing.Point(3, 278);
+            this.clb_uzytkownicy.Name = "clb_uzytkownicy";
+            this.clb_uzytkownicy.Size = new System.Drawing.Size(253, 194);
+            this.clb_uzytkownicy.TabIndex = 5;
+            this.clb_uzytkownicy.SelectedIndexChanged += new System.EventHandler(this.clb_uzytkownicy_SelectedIndexChanged);
             // 
             // tW_kategorie
             // 
@@ -393,9 +394,9 @@
             this.tW_kategorie.ContextMenuStrip = this.MenuKateogrii;
             this.tW_kategorie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tW_kategorie.HideSelection = false;
-            this.tW_kategorie.Location = new System.Drawing.Point(3, 268);
+            this.tW_kategorie.Location = new System.Drawing.Point(3, 478);
             this.tW_kategorie.Name = "tW_kategorie";
-            this.tW_kategorie.Size = new System.Drawing.Size(253, 252);
+            this.tW_kategorie.Size = new System.Drawing.Size(253, 218);
             this.tW_kategorie.TabIndex = 1;
             this.tW_kategorie.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tW_kategorie_AfterCheck);
             // 
@@ -428,6 +429,17 @@
             this.usuńToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             // 
+            // tW_daty
+            // 
+            this.tW_daty.CheckBoxes = true;
+            this.tW_daty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tW_daty.HideSelection = false;
+            this.tW_daty.Location = new System.Drawing.Point(3, 3);
+            this.tW_daty.Name = "tW_daty";
+            this.tW_daty.Size = new System.Drawing.Size(253, 269);
+            this.tW_daty.TabIndex = 0;
+            this.tW_daty.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tW_daty_AfterCheck);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -441,7 +453,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1412, 529);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1412, 705);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // splitContainer1
@@ -462,8 +474,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.chart1);
             this.splitContainer1.Panel2.Controls.Add(this.splitter1);
             this.splitContainer1.Panel2MinSize = 100;
-            this.splitContainer1.Size = new System.Drawing.Size(1141, 523);
-            this.splitContainer1.SplitterDistance = 413;
+            this.splitContainer1.Size = new System.Drawing.Size(1141, 699);
+            this.splitContainer1.SplitterDistance = 551;
             this.splitContainer1.TabIndex = 2;
             // 
             // LV_operacje
@@ -485,7 +497,7 @@
             this.LV_operacje.HideSelection = false;
             this.LV_operacje.Location = new System.Drawing.Point(0, 0);
             this.LV_operacje.Name = "LV_operacje";
-            this.LV_operacje.Size = new System.Drawing.Size(1141, 413);
+            this.LV_operacje.Size = new System.Drawing.Size(1141, 551);
             this.LV_operacje.TabIndex = 4;
             this.LV_operacje.UseCompatibleStateImageBehavior = false;
             this.LV_operacje.View = System.Windows.Forms.View.Details;
@@ -594,14 +606,14 @@
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(3, 0);
             this.chart1.Name = "chart1";
-            this.chart1.Size = new System.Drawing.Size(1138, 106);
+            this.chart1.Size = new System.Drawing.Size(1138, 144);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "chart1";
             // 
@@ -609,7 +621,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 106);
+            this.splitter1.Size = new System.Drawing.Size(3, 144);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
@@ -617,7 +629,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1412, 580);
+            this.ClientSize = new System.Drawing.Size(1412, 756);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuGłówne);
@@ -706,6 +718,7 @@
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmieńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.CheckedListBox clb_uzytkownicy;
     }
 }
 
