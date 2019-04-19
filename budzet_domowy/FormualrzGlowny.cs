@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace budzet_domowy
 {
@@ -418,7 +418,32 @@ namespace budzet_domowy
                 nowy_rekord.SubItems.Add(row.forma_plat);
                 nowy_rekord.SubItems.Add(row.opis);
             }
+
+            var data_do_wykresu = from o in db.operacje
+                                  join u in db.uzytkownicy on o.id_uzytkownika equals u.id_uzytkownika
+                                  join fp in db.forma_platnosci on o.id_forma_platnosci equals fp.id_forma_platnosci
+                                  join k_pod in db.kategoria on o.id_kategoria equals k_pod.id_kategoria
+                                  join k_nad in db.kategoria on k_pod.id_nadkategoria equals k_nad.id_kategoria
+                                  where (chk_kategorie.Contains(k_pod.nazwa) || chk_kategorie.Contains(k_nad.nazwa))
+                                  && chk_daty.Contains(o.data)
+                                  && chk_uzytkownicy.Contains(o.id_uzytkownika)
+                                  group o by new {o.data} into oGroup 
+                                  select new
+                                  {
+                                      data = oGroup.Key.data,
+                                      kwota = oGroup.Sum(o  => o.kwota),
+                                  };
+
+            Series s = new Series("dane");
+            //chart1.Series.Add(s);
+            chart1.Series["dane"].ChartType =  SeriesChartType.Line;
+            chart1.Series["dane"].YValueMembers = "kwota";
+            chart1.Series["dane"].XValueMember = "data";
+            chart1.DataSource = data_do_wykresu;
+            chart1.DataBind();
+
         }
+
         public void GetDates(TreeNodeCollection nodes, List<DateTime> chk_daty)
         {
 
